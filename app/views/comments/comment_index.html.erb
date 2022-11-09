@@ -1,0 +1,20 @@
+<h1>Comments</h1>
+Our blog has <%= comment.public_count %> articles and counting!
+<ul>
+  <% @comments.each do |comment| %>
+    <li>
+      <%= comment.commenter %>
+    </li>
+  <% end %>
+</ul>
+
+<ul>
+  <% @comments.each do |comment| %>
+  <% unless comment.archived? %>
+    <li>
+      <%= link_to comment.commenter, comment %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= link_to "comment_show", article_comment %>
