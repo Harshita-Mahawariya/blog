@@ -1,5 +1,6 @@
 
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   root "articles#index"
   #get "/articles", to: "articles#index"
   #to show all article list
@@ -10,4 +11,6 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
   end
+
+  # root to: redirect('/admin')
 end
